@@ -1,7 +1,9 @@
 import './SumarNumeros.css'
-function SumarNumeros(){
+function SumarNumeros(props){
 
-    const sumarAmbosNumeros = (num1, num2) =>{
+    const sumarAmbosNumeros = () =>{
+        var num1 = parseInt(props.numero1);
+        var num2 = parseInt(props.numero2);
         var suma = num1 + num2;
         console.log("la suma del valor " + num1 + " + " + num2 +" = " + suma)
 
@@ -9,8 +11,8 @@ function SumarNumeros(){
     return(
         <div>
             <h1 className='prueba'>Componente SumarNumeros</h1>
-            <button onClick={() => sumarAmbosNumeros(5,4)}>Sumar 5 y 4</button>
-            <button onClick={() => sumarAmbosNumeros(1,3)}>Sumar 1 y 3</button>
+            <button onClick={() => sumarAmbosNumeros()}>Sumar {props.numero1} + {props.numero2}</button>
+            <button onClick={() => sumarAmbosNumeros()}>Sumar {props.numero1} + {props.numero2}</button>
         </div>
     )
 }
